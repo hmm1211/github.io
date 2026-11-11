@@ -376,10 +376,10 @@
     "title": "리틀 프린세스 2",
     "originalTitle": "Little Princess - Marl Oukoku no Ningyou-hime 2",
     "platform": "PS1",
-    "version": "v0.9",
-    "updated": "2026-11-08",
-    "description": "일본판 Disc 1용 패치. 선택지 위치·로딩·전투 글자와 최종막 월드맵 지명 수정을 포함합니다.",
-    "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/little-princess-marl-oukoku-no-ningyou-hime-2-kr-v0.9",
+    "version": "v0.91",
+    "updated": "2026-11-11",
+    "description": "일본판 Disc 1용 패치. 에트와르 웃음을 1·3편 한글 패치와 통일했습니다(v0.9 이후).",
+    "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/little-princess-marl-oukoku-no-ningyou-hime-2-kr-v0.91",
     "color": "#556df0",
     "coverText": "LITTLE"
   },
@@ -538,6 +538,17 @@
     "coverText": "TRADER"
   },
   {
+    "title": "천사의 선물 ~마알 왕국 이야기~",
+    "originalTitle": "Tenshi no Present - Marl Oukoku Monogatari",
+    "platform": "PS2",
+    "version": "v0.7",
+    "updated": "2026-11-11",
+    "description": "마알 왕국 3부작 3편. 대사·메뉴·그림 글자 한글화와 1·2편 한글 패치와의 표기 통일을 포함합니다.",
+    "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/tenshi-no-present-marl-oukoku-monogatari-kr-v0.7",
+    "color": "#556df0",
+    "coverText": "TENSHI"
+  },
+  {
     "title": "초강전기 키카이오 for Matching Service",
     "originalTitle": "Choukou Senki Kikaioh for Matching Service",
     "platform": "드림캐스트",
@@ -622,7 +633,7 @@
     }
     function renderFilters() {
       filtersEl.replaceChildren();
-      const platforms = ["전체", ...["PS1", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
+      const platforms = ["전체", ...["PS1", "PS2", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
       platforms.forEach(platform => {
         const button = make("button", "filter", platform);
         button.type = "button";
