@@ -110,6 +110,8 @@
     .tag-live { color:#baf1e9; background:#16413f; }
     .card h3 { font-size:18px; margin:0 0 8px; letter-spacing:-.04em; }
     .card-desc { font-size:12px; line-height:1.8; min-height:42px; color:#a7b8d0; margin:0 0 16px; }
+    .older { margin-top:10px; font-size:11px; color:#96a9c2; display:flex; flex-wrap:wrap; gap:6px 10px; }
+    .older a { color:#9fc3ff; text-decoration:none; } .older a:hover { text-decoration:underline; }
     .card-meta { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; color:#96a9c2; font-size:11px; border-top:1px solid #2e3c53; padding-top:14px; margin-bottom:15px; }
     .download { min-height:40px; display:flex; align-items:center; justify-content:center; background:#25364d; color:#dbe8fa;
       border-radius:9px; font-size:12px; font-weight:850; border:1px solid #344966; }
@@ -380,6 +382,13 @@
     "updated": "2026-11-11",
     "description": "일본판 Disc 1용 패치. 에트와르 웃음을 1·3편 한글 패치와 통일했습니다(v0.9 이후).",
     "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/little-princess-marl-oukoku-no-ningyou-hime-2-kr-v0.91",
+    "olderReleases": [
+      {
+        "version": "v0.9",
+        "updated": "2026-11-08",
+        "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/little-princess-marl-oukoku-no-ningyou-hime-2-kr-v0.9"
+      }
+    ],
     "color": "#556df0",
     "coverText": "LITTLE"
   },
@@ -683,6 +692,17 @@
           link.rel = "noopener noreferrer";
           link.setAttribute("aria-label", `${p.title} 패치 받기 (새 탭)`);
           body.appendChild(link);
+          // 같은 게임의 이전 배포본 — GitHub 릴리스 목록은 날짜순이라 따로 떨어져 보이므로 카드에 같이 붙인다
+          if (Array.isArray(p.olderReleases) && p.olderReleases.length) {
+            const older = make("div", "older", "이전 버전:");
+            p.olderReleases.forEach(o => {
+              const a = make("a", "", `${o.version}${o.updated ? " (" + o.updated + ")" : ""} ↗`);
+              a.href = o.releaseUrl; a.target = "_blank"; a.rel = "noopener noreferrer";
+              a.setAttribute("aria-label", `${p.title} ${o.version} 받기 (새 탭)`);
+              older.appendChild(a);
+            });
+            body.appendChild(older);
+          }
         } else {
           const disabled = make("div", "download", "다운로드 링크 등록 전");
           body.appendChild(disabled);
