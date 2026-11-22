@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="PS2 일본판 링 오브 레드 한글패치 v0.7 소개, 실제 게임 스크린샷과 ZIP 다운로드.">
+  <title>링 오브 레드 v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#ring-of-red">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS2 일본판 · 한글패치 v0.7</p>
+        <h1 id="game-title">링 오브 레드</h1>
+        <p class="original" lang="en">Ring of Red</p>
+        <p class="copy">전술 지도에서 부대를 움직이고, AFW 교전에 들어가면 조준과 사격 타이밍을 직접 잡는 전술 게임입니다.</p>
+        <p class="copy">대사 7,359행과 메뉴, 작전 브리핑, 성명 영상 자막, 엔딩을 한글화했습니다. v0.7 재배포에는 ○ 버튼 안내, 전투 명령 글자 크기, 전투 상태창 정렬 수정이 포함됩니다.</p>
+        <p class="requirements">일본판 <strong>SLPM-62013</strong> (디스크 버전 1.20)용입니다. 원본 해시와 적용 방법은 ZIP 안의 <code>readme.txt</code>에 있습니다.</p>
+        <div class="actions">
+          <a class="download" href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/Ring.of.Red-kr-v0.7.zip">v0.7 ZIP 다운로드</a>
+          <a class="release" href="https://github.com/hmm1211/github.io/releases/tag/ring-of-red-kr-v0.7">GitHub 릴리스</a>
+        </div>
+      </div>
+      <figure>
+        <a href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/01-title.png">
+          <img src="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/01-title.png" width="640" height="480" alt="영문 로고 위에 한글 제목 링 오브 레드가 표시된 첫 타이틀 화면">
+        </a>
+        <figcaption>첫 타이틀 화면</figcaption>
+      </figure>
+    </section>
+
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/02-camp-sortie.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/02-camp-sortie.png" width="640" height="480" loading="lazy" alt="작전실·정보실·기록실 메뉴와 출격 확인 대사">
+          </a>
+          <figcaption>캠프 출격 확인</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/03-ishinomaki-briefing.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/03-ishinomaki-briefing.png" width="640" height="480" loading="lazy" alt="이시노마키 지명과 상륙 작전이 표시된 브리핑 지도">
+          </a>
+          <figcaption>이시노마키 상륙 작전 브리핑</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/04-tactical-map.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/04-tactical-map.png" width="640" height="480" loading="lazy" alt="격자 위 AFW와 공격·성능·회복·대기 명령">
+          </a>
+          <figcaption>전술 지도와 부대 명령</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/05-afw-combat.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/05-afw-combat.png" width="640" height="480" loading="lazy" alt="글자 위치를 수정한 AFW 전투 상태창과 빨간 원형 버튼 안내">
+          </a>
+          <figcaption>AFW 전투와 사격 명령</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

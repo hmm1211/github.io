@@ -99,6 +99,12 @@
     .cover:before { content:""; position:absolute; width:210px; height:210px; border:2px solid #ffffff1b; border-radius:40px;
       right:-36px; top:-67px; transform:rotate(30deg); }
     .cover:after { content:""; position:absolute; width:110px; height:110px; border:2px solid #ffffff20; right:30px; top:18px; transform:rotate(30deg); }
+    .cover-preview { padding:0; background:#0a101d; }
+    .cover-preview:before,.cover-preview:after { display:none; }
+    .cover-preview img { width:100%; height:100%; object-fit:contain; }
+    .patch-intro { display:inline-block; margin:12px 0 0; color:#b5d4ff; font-size:12px; font-weight:750; }
+    .patch-intro:hover,.patch-intro:focus-visible { text-decoration:underline; }
+    .card[id] { scroll-margin-top:20px; }
     .cover-mark { z-index:1; font-size:clamp(32px, 4vw, 50px); font-weight:900; letter-spacing:-.09em; color:#f0f8ff; opacity:.76; line-height:1; }
     .cover-small { z-index:1; margin-top:8px; font-size:10px; color:#dce9ff; font-weight:850; letter-spacing:.18em; }
     .cover-platform { position:absolute; z-index:2; left:17px; top:16px; background:#081222bb; border:1px solid #ffffff44; color:#eaf6ff;
@@ -242,6 +248,19 @@
   <script>
     // 실제 게시된 GitHub 릴리스와 검증한 배포본을 바탕으로 구성합니다.
     const patches = [
+  {
+    "id": "ring-of-red",
+    "title": "링 오브 레드",
+    "originalTitle": "Ring of Red",
+    "platform": "PS2",
+    "version": "v0.7",
+    "updated": "2026-11-22",
+    "description": "일본판용 한글패치입니다. 대사 7,359행과 메뉴·작전 브리핑·영상 자막·엔딩을 한글화했습니다.",
+    "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/ring-of-red-kr-v0.7",
+    "downloadUrl": "https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/Ring.of.Red-kr-v0.7.zip",
+    "introUrl": "ring-of-red.html",
+    "coverUrl": "https://github.com/hmm1211/github.io/releases/download/ring-of-red-kr-v0.7/01-title.png"
+  },
   {
     "title": "피어 이펙트",
     "originalTitle": "Fear Effect",
@@ -708,10 +727,22 @@
       filtered.forEach(p => {
         const card = make("article", "card");
         const cover = make("div", "cover");
-        cover.style.setProperty("--covercolor", p.color || "#568be4");
+        if (p.id) card.id = p.id;
         cover.appendChild(make("span", "cover-platform", p.platform));
-        cover.appendChild(make("div", "cover-mark", p.coverText || p.title.slice(0, 4)));
-        cover.appendChild(make("div", "cover-small", "KOREAN PATCH ARCHIVE"));
+        if (p.coverUrl) {
+          cover.classList.add("cover-preview");
+          const picture = make("img");
+          picture.src = p.coverUrl;
+          picture.alt = p.title + " 타이틀 화면";
+          picture.width = 640;
+          picture.height = 480;
+          picture.loading = "lazy";
+          cover.appendChild(picture);
+        } else {
+          cover.style.setProperty("--covercolor", p.color || "#568be4");
+          cover.appendChild(make("div", "cover-mark", p.coverText || p.title.slice(0, 4)));
+          cover.appendChild(make("div", "cover-small", "KOREAN PATCH ARCHIVE"));
+        }
         card.appendChild(cover);
 
         const body = make("div", "card-body");
@@ -726,11 +757,15 @@
         meta.appendChild(make("span", "", p.updated || "날짜 미정"));
         body.appendChild(meta);
         if (hasLink(p)) {
-          const link = make("a", "download active", "패치 받기  ↗");
-          link.href = p.releaseUrl;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.setAttribute("aria-label", `${p.title} 패치 받기 (새 탭)`);
+          const link = make("a", "download active", p.downloadUrl ? `${p.version} ZIP 다운로드` : "패치 받기  ↗");
+          link.href = p.downloadUrl || p.releaseUrl;
+          if (p.downloadUrl) {
+            link.setAttribute("aria-label", `${p.title} ${p.version} ZIP 다운로드`);
+          } else {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.setAttribute("aria-label", `${p.title} 패치 받기 (새 탭)`);
+          }
           body.appendChild(link);
           // 같은 게임의 이전 배포본 — GitHub 릴리스 목록은 날짜순이라 따로 떨어져 보이므로 카드에 같이 붙인다
           if (Array.isArray(p.olderReleases) && p.olderReleases.length) {
@@ -746,6 +781,12 @@
         } else {
           const disabled = make("div", "download", "다운로드 링크 등록 전");
           body.appendChild(disabled);
+        }
+        if (p.introUrl) {
+          const intro = make("a", "patch-intro", "소개 · 스크린샷 보기 →");
+          intro.href = p.introUrl;
+          intro.setAttribute("aria-label", p.title + " 소개와 스크린샷 보기");
+          body.appendChild(intro);
         }
         card.appendChild(body);
         cardsEl.appendChild(card);
