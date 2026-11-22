@@ -757,10 +757,10 @@
         meta.appendChild(make("span", "", p.updated || "날짜 미정"));
         body.appendChild(meta);
         if (hasLink(p)) {
-          const link = make("a", "download active", p.downloadUrl ? `${p.version} ZIP 다운로드` : "패치 받기  ↗");
+          const link = make("a", "download active", p.downloadUrl ? "패치받기" : "패치 받기  ↗");
           link.href = p.downloadUrl || p.releaseUrl;
           if (p.downloadUrl) {
-            link.setAttribute("aria-label", `${p.title} ${p.version} ZIP 다운로드`);
+            link.setAttribute("aria-label", `${p.title} 패치받기`);
           } else {
             link.target = "_blank";
             link.rel = "noopener noreferrer";
