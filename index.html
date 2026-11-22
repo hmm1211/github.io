@@ -102,8 +102,7 @@
     .cover-preview { padding:0; background:#0a101d; }
     .cover-preview:before,.cover-preview:after { display:none; }
     .cover-preview img { width:100%; height:100%; object-fit:contain; }
-    .patch-intro { display:inline-block; margin:12px 0 0; color:#b5d4ff; font-size:12px; font-weight:750; }
-    .patch-intro:hover,.patch-intro:focus-visible { text-decoration:underline; }
+    .patch-direct { display:inline-block; margin:12px 0 0; color:#b5d4ff; font-size:12px; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
     .card[id] { scroll-margin-top:20px; }
     .cover-mark { z-index:1; font-size:clamp(32px, 4vw, 50px); font-weight:900; letter-spacing:-.09em; color:#f0f8ff; opacity:.76; line-height:1; }
     .cover-small { z-index:1; margin-top:8px; font-size:10px; color:#dce9ff; font-weight:850; letter-spacing:.18em; }
@@ -757,10 +756,10 @@
         meta.appendChild(make("span", "", p.updated || "날짜 미정"));
         body.appendChild(meta);
         if (hasLink(p)) {
-          const link = make("a", "download active", p.downloadUrl ? "패치받기" : "패치 받기  ↗");
-          link.href = p.downloadUrl || p.releaseUrl;
-          if (p.downloadUrl) {
-            link.setAttribute("aria-label", `${p.title} 패치받기`);
+          const link = make("a", "download active", p.introUrl ? "소개 보기" : "패치 받기  ↗");
+          link.href = p.introUrl || p.releaseUrl;
+          if (p.introUrl) {
+            link.setAttribute("aria-label", `${p.title} 소개와 스크린샷 보기`);
           } else {
             link.target = "_blank";
             link.rel = "noopener noreferrer";
@@ -782,11 +781,11 @@
           const disabled = make("div", "download", "다운로드 링크 등록 전");
           body.appendChild(disabled);
         }
-        if (p.introUrl) {
-          const intro = make("a", "patch-intro", "소개 · 스크린샷 보기 →");
-          intro.href = p.introUrl;
-          intro.setAttribute("aria-label", p.title + " 소개와 스크린샷 보기");
-          body.appendChild(intro);
+        if (p.downloadUrl) {
+          const direct = make("a", "patch-direct", "패치받기");
+          direct.href = p.downloadUrl;
+          direct.setAttribute("aria-label", `${p.title} ${p.version} 패치받기 ZIP 다운로드`);
+          body.appendChild(direct);
         }
         card.appendChild(body);
         cardsEl.appendChild(card);
