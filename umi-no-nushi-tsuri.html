@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="PS1 일본판 바다의 주인 낚시 - 보물섬을 향해서 한글패치 v0.7 소개, 실제 게임 스크린샷과 ZIP 다운로드.">
+  <title>바다의 주인 낚시 - 보물섬을 향해서 v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#umi-no-nushi-tsuri">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS1 일본판 · 1999년 · 한글패치 v0.7</p>
+        <h1 id="game-title">바다의 주인 낚시 - 보물섬을 향해서</h1>
+        <p class="original" lang="en">Umi no Nushi-tsuri - Takarajima ni Mukatte</p>
+        <p class="copy">작은 마을에 사는 열두 살 소년이 전설의 물고기를 낚기 위해 여행을 떠납니다. 아기자기한 2D 그래픽으로 그려진 바닷가를 돌아다니며 낚시와 모험을 즐기는 RPG입니다. 처음에는 소년으로 시작하며, 게임을 진행하면 다른 두 인물로도 플레이할 수 있습니다.</p>
+        <p class="copy">대사·메뉴·도구 설명 등 1,886행과 타이틀, 물고기 이름표를 한글화했습니다. 한글 이름 조합 입력과 받침에 따른 자동 조사를 지원하고, 낚시 노트와 가족 전언판, 엔딩 글자와 영상 속 생선가게 간판을 한글로 바꿨습니다.</p>
+        <p class="requirements">미수정 일본판 <strong>SLPS-02172</strong> BIN에 적용하는 v0.7 검수판입니다. 원본 해시와 적용 방법은 ZIP 안의 <code>readme.txt</code>에 있습니다.</p>
+        <div class="actions">
+          <a class="download" href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/Umi.no.Nushi-tsuri.-.Takarajima.ni.Mukatte-kr-v0.7.zip">패치받기</a>
+          <a class="release" href="https://github.com/hmm1211/github.io/releases/tag/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7">GitHub 릴리스</a>
+        </div>
+      </div>
+      <figure>
+        <a href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/01-title.png">
+          <img src="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/01-title.png" width="256" height="240" alt="바닷속 배경에 바다의 주인낚시 보물섬을 향해서 한글 로고가 표시된 화면">
+        </a>
+        <figcaption>타이틀 화면</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/02-name-entry.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/02-name-entry.png" width="256" height="240" loading="lazy" alt="기본 이름 코이치와 자음·모음, 확인 버튼이 한 화면에 표시된 이름 입력 화면">
+          </a>
+          <figcaption>한글 이름 입력</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/03-opening-dialogue.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/03-opening-dialogue.png" width="256" height="240" loading="lazy" alt="게임 도입부의 한글 대사">
+          </a>
+          <figcaption>도입부 대사</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/04-keepnet-menu.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/04-keepnet-menu.png" width="256" height="240" loading="lazy" alt="음식, 도구, 살림망이 표시된 한글 선택 메뉴">
+          </a>
+          <figcaption>선택 메뉴</figcaption>
+        </figure>
+        <figure>
+          <a href="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/05-fishing.png">
+            <img src="https://github.com/hmm1211/github.io/releases/download/umi-no-nushi-tsuri-takarajima-ni-mukatte-kr-v0.7/05-fishing.png" width="256" height="240" loading="lazy" alt="항구에서 낚싯줄을 던져 바다에 찌가 뜬 플레이 화면">
+          </a>
+          <figcaption>바다낚시 플레이</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
