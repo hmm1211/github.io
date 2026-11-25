@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="PS2 일본판 블랙 매트릭스 II 한글패치 v0.7 소개, 실제 게임 스크린샷과 ZIP 다운로드.">
+  <title>블랙 매트릭스 II v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#patches">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS2 일본판 · 2002년 · 한글패치 v0.7</p>
+        <h1 id="game-title">블랙 매트릭스 II</h1>
+        <p class="original" lang="en">Black/Matrix II</p>
+        <p class="copy">이야기의 무대는 흰 날개의 천사들이 사는 천계, 날개 없는 사람들이 사는 인간계, 검은 날개의 마족이 사는 마계로 나뉩니다. 세 세계는 각자의 질서를 지키며 서로를 경계합니다. 천사들의 말을 듣고 마계를 두려워하는 인간이 많지만, 마계의 여왕 제나로즈는 누구보다 인간을 아끼는 인물로 알려져 있습니다.</p>
+        <p class="copy">대사와 선택지, 메뉴와 아이템을 한글화하고 한 화면에서 한글 이름을 조합해 입력할 수 있게 했습니다. 한글 타이틀 로고와 흑백 실루엣, 지역명·전투 제목·승리 조건 이미지도 적용했습니다.</p>
+        <p class="requirements">일본판 <strong>SLPS-20187</strong>용 플레이 검수판입니다. 원본 해시와 적용 방법은 ZIP 안의 <code>readme.txt</code>에 있습니다.</p>
+        <div class="actions">
+          <a class="download" href="https://github.com/hmm1211/github.io/releases/download/black-matrix-ii-kr-v0.7/Black-Matrix.II.Japan.-kr-v0.7.zip">패치받기</a>
+          <a class="release" href="https://github.com/hmm1211/github.io/releases/tag/black-matrix-ii-kr-v0.7">GitHub 릴리스</a>
+        </div>
+      </div>
+      <figure>
+        <a href="images/black-matrix-ii/01-title.png">
+          <img src="images/black-matrix-ii/01-title.png" width="597" height="448" alt="붉은 테두리의 블랙 매트릭스 한글 로고가 표시된 타이틀 화면">
+        </a>
+        <figcaption>한글 타이틀 화면</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+        <figure>
+        <a href="images/black-matrix-ii/02-name-entry.png">
+          <img src="images/black-matrix-ii/02-name-entry.png" width="597" height="448" loading="lazy" alt="한글 자모 자판 위에 레이지라는 이름과 예·아니요가 표시된 확인창">
+        </a>
+        <figcaption>한글 이름 입력과 확인</figcaption>
+      </figure>
+        <figure>
+        <a href="images/black-matrix-ii/03-story-dialogue.png">
+          <img src="images/black-matrix-ii/03-story-dialogue.png" width="597" height="448" loading="lazy" alt="레이지의 인물 그림 옆에 기둥이 늘어선 배경과 한글 대사창이 표시된 화면">
+        </a>
+        <figcaption>초반 이야기와 한글 대사</figcaption>
+      </figure>
+        <figure>
+        <a href="images/black-matrix-ii/04-combat.png">
+          <img src="images/black-matrix-ii/04-combat.png" width="597" height="448" loading="lazy" alt="레이지와 성기병이 검을 맞대고 피해 수치가 표시된 3D 전투 화면">
+        </a>
+        <figcaption>첫 교전</figcaption>
+      </figure>
+        <figure>
+        <a href="images/black-matrix-ii/05-tactical-movement.png">
+          <img src="images/black-matrix-ii/05-tactical-movement.png" width="597" height="448" loading="lazy" alt="레이지의 상태창과 파란 이동 가능 칸이 표시된 전투 지도">
+        </a>
+        <figcaption>전투 지도와 이동 명령</figcaption>
+      </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
