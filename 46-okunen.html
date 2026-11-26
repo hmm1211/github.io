@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="슈퍼패미컴 일본판 46억년 이야기 한글패치 v0.81 소개와 실제 게임 스크린샷 5장.">
+  <title>46억년 이야기 v0.81 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.source { color:#b5d4ff; text-underline-offset:4px; }
+    .overview { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px; align-items:center; padding:46px 0 34px; }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .source-note { color:#91a7c2; font-size:12px; margin:0 0 20px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#0b1121; image-rendering:pixelated; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) { .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; } }
+    @media (max-width:520px) { .container { width:calc(100% - 28px); } .screens-grid { grid-template-columns:1fr; gap:14px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#46-okunen">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">슈퍼패미컴 일본판 · 1992년 · 한글패치 v0.81</p>
+        <h1 id="game-title">46억년 이야기 — 멀고 먼 에덴으로</h1>
+        <p class="original" lang="ja">46億年物語 はるかなるエデンへ</p>
+        <p class="copy">태초의 지구, 당신은 이 땅에 나타난 최초의 생명체 중 하나입니다. 평화 협정 따위 없던 약육강식의 시대에 턱과 이빨로 싸우며 살아남아야 합니다. ‘멀티 체인지’로 몸의 여러 부위를 바꾸고 ‘생명의 책’에 직접 만든 생물을 최대 50종까지 기록할 수 있습니다. 전설 속 에덴에 이르는 길에는 46억 년에 걸쳐 등장한 대자연의 강적들이 기다립니다.</p>
+        <p class="source-note">게임 소개: <a class="source" href="https://gamesdb.launchbox-app.com/games/details/1809-evo-search-for-eden" lang="en">LaunchBox Games Database, E.V.O.: Search for Eden</a>의 소개글을 한국어로 옮겼습니다.</p>
+        <p class="copy">이 한글패치는 일본판의 대사·메뉴·지역명·타이틀과 시대 제목을 한국어로 표시합니다. v0.81에서는 엔딩 크레딧의 빈칸에 ‘된’이 나타나던 문제를 고쳤습니다.</p>
+        <p class="requirements">헤더 없는 미수정 일본판 <strong>46 Okunen Monogatari - Harukanaru Eden e (Japan).sfc</strong>에 적용하는 검수용 패치입니다. v0.8 패치본에 덧씌우지 마세요. 지원 원본의 해시와 적용 방법은 배포 ZIP 안의 <code>README.txt</code>에 있습니다. 전체 플레이와 실기 검증은 아직 완료되지 않았습니다.</p>
+        <div class="actions">
+          <a class="download" href="https://github.com/hmm1211/github.io/releases/tag/46-okunen-monogatari-harukanaru-eden-e-kr-v0.81">패치받기</a>
+        </div>
+      </div>
+      <figure>
+        <a href="images/46-okunen/01-title.png">
+          <img src="images/46-okunen/01-title.png" width="880" height="672" alt="46억년 이야기 머나먼 에덴으로 한글 로고가 지구 위에 표시된 타이틀 화면">
+        </a>
+        <figcaption>한글 타이틀 화면</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+        <figure>
+          <a href="images/46-okunen/02-first-stage.png"><img src="images/46-okunen/02-first-stage.png" width="256" height="224" loading="lazy" alt="해저 필드와 시작의 바다 지역명, 생명력과 진화점이 표시된 화면"></a>
+          <figcaption>첫 지역 ‘시작의 바다’</figcaption>
+        </figure>
+        <figure>
+          <a href="images/46-okunen/03-underwater-field.png"><img src="images/46-okunen/03-underwater-field.png" width="256" height="224" loading="lazy" alt="물고기 캐릭터가 해저에서 헤엄치고 있는 플레이 화면"></a>
+          <figcaption>해저 필드</figcaption>
+        </figure>
+        <figure>
+          <a href="images/46-okunen/04-evolution-menu.png"><img src="images/46-okunen/04-evolution-menu.png" width="256" height="224" loading="lazy" alt="턱과 뿔 등 몸의 부위를 선택하는 한글 진화 메뉴"></a>
+          <figcaption>진화 메뉴</figcaption>
+        </figure>
+        <figure>
+          <a href="images/46-okunen/05-name-entry.png"><img src="images/46-okunen/05-name-entry.png" width="256" height="224" loading="lazy" alt="한글 글자판에서 진화한 생물의 이름을 정하는 화면"></a>
+          <figcaption>한글 이름 입력</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
