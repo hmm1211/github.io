@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="새턴 탄트알·이치단트알·산도알 통합 한글패치 v0.7. 산도알 원본만으로 패치하는 방법과 게임 스크린샷.">
+<title>탄트알·이치단트알·산도알 통합 한글패치 v0.7 | 한글패치 보관소</title><style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(32px,5vw,50px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .subtitle { display:block; font-size:.52em; letter-spacing:-.035em; margin-top:9px; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:330/224; image-rendering:pixelated; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style></head>
+<body><header class="topbar"><div class="container"><a class="brand" href="./">한글패치 보관소</a><a class="back" href="./#tanto-trilogy">목록으로 돌아가기</a></div></header>
+<main class="container"><section class="overview" aria-labelledby="game-title"><div>
+<p class="metadata">Sega Saturn · 퍼즐 &amp; 액션 · v0.7</p>
+<h1 id="game-title">탄트알 · 이치단트알 · 산도알<span class="subtitle">3편 통합 한국어 패치</span></h1>
+<p class="original" lang="en">Puzzle &amp; Action Trilogy</p>
+<p class="copy">기억력, 관찰력과 순발력을 겨루는 미니게임 시리즈 세 편을 하나의 디스크에 모았습니다. 처음 선택 화면에서 방향키로 게임을 고르고 A 또는 START로 시작합니다.</p>
+<p class="copy">각 게임의 한글 이미지와 새 한글 타이틀 로고를 반영했습니다. 이치단트알의 목표달성 글자 깨짐을 수정했고, 산도알의 ‘실크해트’ 표기를 ‘실크모자’로 바꿨습니다.</p>
+<p class="requirements"><strong>패치 적용에는 일본판 산도알(3편) 롬만 있으면 됩니다. 탄트알(1편)·이치단트알(2편) 롬은 필요하지 않습니다.</strong></p>
+<p class="requirements"><code>2do Aru Koto wa Sando R (Japan)</code>의 RAW MODE1/2352 Track 1.bin에 xdelta를 적용하고 Track 2.bin은 그대로 복사합니다. CUE 작성 내용과 정확한 원본 해시, 출력 해시는 ZIP의 <code>readme.txt</code>에 있습니다.</p>
+<p class="copy">Beetle Saturn에서 새 부팅, 세 게임 선택과 타이틀·일부 플레이 화면을 확인했습니다. 모든 미니게임·분기·엔딩 완주, 실기·다른 에뮬레이터 및 저장 호환성은 검증하지 않았습니다. 기존 강제 저장 상태 대신 새로 부팅하십시오.</p>
+<div class="actions"><a class="download" href="https://github.com/hmm1211/github.io/releases/download/2do-aru-koto-wa-sando-r-trilogy-kr-v0.7/2do.Aru.Koto.wa.Sando.R-kr-v0.7.zip">v0.7 패치 ZIP 받기</a><a class="release" href="https://github.com/hmm1211/github.io/releases/tag/2do-aru-koto-wa-sando-r-trilogy-kr-v0.7">GitHub 릴리즈</a></div></div>
+<figure><a href="images/tanto-trilogy/01-selection.png"><img src="images/tanto-trilogy/01-selection.png" width="330" height="224" alt="처음 게임 선택 화면"></a><figcaption>처음 게임 선택 화면</figcaption></figure></section>
+<section class="screens" aria-labelledby="screens-title"><h2 id="screens-title">게임 플레이 스크린샷 5장</h2><div class="screens-grid">
+<figure><a href="images/tanto-trilogy/02-tant-r.png"><img src="images/tanto-trilogy/02-tant-r.png" width="330" height="224" alt="탄트알 플레이" loading="lazy"></a><figcaption>탄트알 플레이</figcaption></figure>
+<figure><a href="images/tanto-trilogy/03-ichidant-r.png"><img src="images/tanto-trilogy/03-ichidant-r.png" width="330" height="224" alt="이치단트알 플레이 1" loading="lazy"></a><figcaption>이치단트알 플레이 1</figcaption></figure>
+<figure><a href="images/tanto-trilogy/04-ichidant-r.png"><img src="images/tanto-trilogy/04-ichidant-r.png" width="330" height="224" alt="이치단트알 플레이 2" loading="lazy"></a><figcaption>이치단트알 플레이 2</figcaption></figure>
+<figure><a href="images/tanto-trilogy/05-sand-r.png"><img src="images/tanto-trilogy/05-sand-r.png" width="330" height="224" alt="산도알 플레이 1" loading="lazy"></a><figcaption>산도알 플레이 1</figcaption></figure>
+<figure><a href="images/tanto-trilogy/06-sand-r.png"><img src="images/tanto-trilogy/06-sand-r.png" width="330" height="224" alt="산도알 플레이 2" loading="lazy"></a><figcaption>산도알 플레이 2</figcaption></figure>
+</div></section></main></body></html>

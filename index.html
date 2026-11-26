@@ -1,251 +1,251 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="레트로·PC 게임용 한국어 패치를 찾아보고, GitHub 릴리스에서 다운로드할 수 있는 개인 한글패치 아카이브입니다.">
-  <meta name="theme-color" content="#0b1020">
-  <title>한글패치 보관소 | K-PATCH ARCHIVE</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0a0f1d; --panel: #131c2e; --panel2: #19253a; --line: #29354a;
-      --ink: #f2f6ff; --muted: #a3b2ca; --cyan: #65dfec; --blue: #7ca9ff;
-      --accent: #9c8bff; --radius: 18px;
-      font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--bg); min-height: 100vh; }
-    body::before { content:""; position:absolute; inset:0 0 auto; height:580px; pointer-events:none; z-index:-1;
-      background: radial-gradient(ellipse 52% 80% at 79% 30%, #263b6c55 0, transparent 80%),
-      radial-gradient(ellipse 33% 65% at 23% 10%, #4c2c7355 0, transparent 80%);
-    }
-    a { color:inherit; text-decoration:none; }
-    button,input { font:inherit; }
-    button { cursor:pointer; }
-    .container { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
-    .topbar { background:#0b1121dd; border-bottom:1px solid #28324888; }
-    .top-inner { display:flex; gap:20px; align-items:center; justify-content:space-between; min-height:74px; }
-    .brand { display:flex; align-items:center; gap:12px; font-weight:850; font-size:16px; letter-spacing:.02em; }
-    .brand-icon { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; color:#081221;
-      background:linear-gradient(135deg, var(--cyan), var(--blue)); font-weight:900; font-size:17px; }
-    .brand small { display:block; font-size:10px; letter-spacing:.15em; color:var(--muted); font-weight:700; margin-top:2px; }
-    .top-nav { display:flex; gap:26px; align-items:center; color:#b8c5db; font-size:13px; font-weight:650; }
-    .top-nav a:hover, .top-nav a:focus-visible { color:var(--cyan); }
-    .nav-label { color:#09202a; background:var(--cyan); padding:10px 14px; border-radius:11px; font-weight:800; }
-    .nav-label:hover { background:#a3f4fc; }
-    .hero { display:grid; grid-template-columns:minmax(0, 1.22fr) minmax(310px, .78fr); gap:44px; align-items:center;
-      padding:77px 0 63px; }
-    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:#b4edfc; font-size:11px; font-weight:850;
-      letter-spacing:.13em; text-transform:uppercase; }
-    .eyebrow::before { content:""; width:18px; height:2px; background:var(--cyan); }
-    h1,h2,h3,p { margin-top:0; }
-    h1 { font-size:clamp(38px, 5.5vw, 68px); letter-spacing:-.075em; line-height:1.16; margin:17px 0 21px; font-weight:900; }
-    .gradient-text { background:linear-gradient(90deg, #72e0f1, #a7acff); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .hero-desc { color:#b8c5d9; max-width:575px; font-size:16px; line-height:1.95; word-break:keep-all; }
-    .hero-actions { display:flex; gap:11px; flex-wrap:wrap; margin-top:26px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:11px; min-height:44px; padding:0 17px;
-      font-weight:800; font-size:13px; border:1px solid transparent; }
-    .btn-primary { background:linear-gradient(110deg, #6be2ee, #98acff); color:#071321; }
-    .btn-primary:hover { filter:brightness(1.1); }
-    .btn-subtle { border-color:#38475f; background:#1c283b; color:#e4eafd; }
-    .btn-subtle:hover { border-color:#8292b3; }
-    .hero-art { min-height:310px; padding:28px; display:flex; justify-content:center; align-items:center; position:relative; overflow:hidden;
-      background:linear-gradient(155deg, #223251dd, #101b2d 61%); border:1px solid #3b5076; border-radius:26px;
-      box-shadow:0 28px 80px #02061066; }
-    .hero-art::before { content:""; position:absolute; width:270px; height:270px; border:1px solid #7088bf44; border-radius:50%; transform:scale(1.3); }
-    .hero-art::after { content:""; position:absolute; width:270px; height:270px; border:1px dashed #7088bf44; border-radius:50%; transform:scale(.81); }
-    .pixel-spark { position:absolute; width:9px; height:9px; background:var(--cyan); box-shadow:0 0 24px #5de6f2; transform:rotate(30deg); }
-    .spark1 { top:27px; right:78px; } .spark2 { bottom:49px; left:42px; width:5px; height:5px; }
-    .console { z-index:1; position:relative; background:#ecf3ff; width:228px; height:242px; border-radius:24px 24px 42px 24px; padding:20px 21px;
-      transform:rotate(-9deg); box-shadow:15px 22px 35px #050a16aa, inset -10px -9px #b8c5dc; }
-    .screen-frame { background:#20314f; border:7px solid #8799b6; border-radius:13px 13px 26px 13px; height:135px; padding:10px; }
-    .screen { height:100%; background:linear-gradient(130deg, #1e335a, #304e69); display:flex; flex-direction:column; align-items:center;
-      justify-content:center; border-radius:3px; color:#a0ecf6; font:900 23px/1.3 ui-monospace, SFMono-Regular, Consolas, monospace; text-shadow:0 0 12px #79e5ff88; }
-    .screen span { font-size:11px; color:#c6faff; letter-spacing:.25em; }
-    .controls { position:relative; margin:24px 7px; height:42px; }
-    .dpad-h { position:absolute; left:0; top:13px; width:48px; height:16px; border-radius:4px; background:#364561; }
-    .dpad-v { position:absolute; left:16px; top:-3px; width:16px; height:48px; border-radius:4px; background:#364561; }
-    .ab { position:absolute; right:0; top:2px; display:flex; gap:10px; transform:rotate(-20deg); }
-    .ab span { display:block; width:24px; height:24px; border-radius:50%; background:#a18cea; box-shadow:inset -3px -3px #7559c0; }
-    .float-note { z-index:2; position:absolute; right:19px; bottom:25px; padding:10px 13px; border:1px solid #4b6589;
-      background:#112036eb; color:#d9faff; border-radius:10px; font-weight:800; font-size:12px; box-shadow:0 10px 30px #0004; }
-    .overview { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:84px; }
-    .stat { padding:20px 22px; border:1px solid var(--line); border-radius:15px; background:#121b2ac9; }
-    .stat strong { display:block; font-size:26px; letter-spacing:-.04em; }
-    .stat small { color:var(--muted); font-weight:650; font-size:12px; display:block; margin-top:7px; }
-    section { scroll-margin-top:28px; }
-    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:22px; }
-    .section-title { font-size:28px; letter-spacing:-.055em; margin:7px 0 6px; font-weight:900; }
-    .section-desc { color:var(--muted); margin:0; font-size:13px; line-height:1.7; }
-    .note { font-size:11px; color:#c6bca2; background:#31291a; border:1px solid #6b522c; padding:8px 12px; border-radius:10px; }
-    .search-tools { display:flex; gap:12px; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; }
-    .filters { display:flex; flex-wrap:wrap; gap:7px; }
-    .filter { border:1px solid #334156; color:#b6c7dd; background:#182336; padding:9px 15px; border-radius:10px; font-weight:750; font-size:12px; }
-    .filter[aria-pressed="true"] { background:var(--cyan); color:#0a2027; border-color:var(--cyan); }
-    .search-box { display:flex; gap:9px; align-items:center; padding:0 14px; border:1px solid #3b4b64; background:#172235;
-      border-radius:11px; min-height:40px; width:265px; max-width:100%; }
-    .search-box:focus-within { border-color:#80e6f3; box-shadow:0 0 0 3px #80e6f323; }
-    .search-box svg { color:#9caec6; flex-shrink:0; }
-    .search-box input { width:100%; background:transparent; border:0; outline:0; color:#f2f6ff; font-size:13px; }
-    .search-box input::placeholder { color:#8799b4; }
-    .results { color:var(--muted); font-size:12px; margin-bottom:13px; }
-    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-    .card { background:#141e2f; border:1px solid #2d3a50; border-radius:17px; overflow:hidden; transition:transform .18s,border-color .18s; }
-    .card:hover { transform:translateY(-4px); border-color:#688bb8; }
-    .cover { aspect-ratio:16/9; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; padding:20px;
-      background:radial-gradient(circle at 72% 25%, color-mix(in srgb, var(--covercolor) 65%, transparent), transparent 65%), linear-gradient(135deg,#202f4c,#101a29); }
-    .cover:before { content:""; position:absolute; width:210px; height:210px; border:2px solid #ffffff1b; border-radius:40px;
-      right:-36px; top:-67px; transform:rotate(30deg); }
-    .cover:after { content:""; position:absolute; width:110px; height:110px; border:2px solid #ffffff20; right:30px; top:18px; transform:rotate(30deg); }
-    .cover-preview { padding:0; background:#0a101d; }
-    .cover-preview:before,.cover-preview:after { display:none; }
-    .cover-preview img { width:100%; height:100%; object-fit:contain; }
-    .patch-direct { display:inline-block; margin:12px 0 0; color:#b5d4ff; font-size:12px; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
-    .card[id] { scroll-margin-top:20px; }
-    .cover-mark { z-index:1; font-size:clamp(32px, 4vw, 50px); font-weight:900; letter-spacing:-.09em; color:#f0f8ff; opacity:.76; line-height:1; }
-    .cover-small { z-index:1; margin-top:8px; font-size:10px; color:#dce9ff; font-weight:850; letter-spacing:.18em; }
-    .cover-platform { position:absolute; z-index:2; left:17px; top:16px; background:#081222bb; border:1px solid #ffffff44; color:#eaf6ff;
-      padding:5px 9px; border-radius:7px; font-size:10px; font-weight:850; }
-    .card-body { padding:19px; }
-    .tags { display:flex; gap:7px; margin-bottom:10px; }
-    .tag { color:#bbcbdf; background:#223047; border-radius:6px; padding:5px 8px; font-size:10px; font-weight:780; }
-    .tag-demo { color:#f5d9aa; background:#443423; }
-    .tag-live { color:#baf1e9; background:#16413f; }
-    .card h3 { font-size:18px; margin:0 0 8px; letter-spacing:-.04em; }
-    .card-desc { font-size:12px; line-height:1.8; min-height:42px; color:#a7b8d0; margin:0 0 16px; }
-    .older { margin-top:10px; font-size:11px; color:#96a9c2; display:flex; flex-wrap:wrap; gap:6px 10px; }
-    .older a { color:#9fc3ff; text-decoration:none; } .older a:hover { text-decoration:underline; }
-    .card-meta { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; color:#96a9c2; font-size:11px; border-top:1px solid #2e3c53; padding-top:14px; margin-bottom:15px; }
-    .download { min-height:40px; display:flex; align-items:center; justify-content:center; background:#25364d; color:#dbe8fa;
-      border-radius:9px; font-size:12px; font-weight:850; border:1px solid #344966; }
-    .download.active { background:#62d6e5; color:#071a23; border-color:#62d6e5; }
-    .download.active:hover { background:#9af3fa; }
-    .empty { grid-column:1/-1; text-align:center; background:#172235; border:1px dashed #40506b; padding:55px 20px; color:#b6c9df; border-radius:14px; }
-    .guide { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:82px 0 85px; }
-    .guide-panel { border:1px solid #344259; border-radius:17px; padding:30px; background:#172134; }
-    .guide-panel h2 { font-size:22px; letter-spacing:-.05em; margin-bottom:18px; }
-    .steps { list-style:none; padding:0; margin:0; display:grid; gap:17px; }
-    .steps li { display:flex; align-items:flex-start; gap:13px; color:#b3c4db; font-size:13px; line-height:1.7; }
-    .step-num { display:grid; place-items:center; flex-shrink:0; height:27px; width:27px; border-radius:9px; background:#24465c; color:#9be9f2; font-weight:900; }
-    .notice { background:linear-gradient(135deg,#1a2b43,#22243d); border:1px solid #485473; border-radius:17px; padding:30px; }
-    .notice h2 { margin-bottom:18px; font-size:22px; letter-spacing:-.05em; }
-    .notice p { font-size:13px; color:#b6c5de; line-height:1.95; }
-    footer { border-top:1px solid #2d3a52; padding:27px 0 35px; background:#0a0f1b; color:#94a5be; font-size:12px; }
-    .footer-inner { display:flex; gap:15px; justify-content:space-between; flex-wrap:wrap; }
-    @media (max-width:860px) {
-      .hero { grid-template-columns:1fr; gap:24px; padding-top:50px; }
-      .hero-art { max-width:550px; width:100%; margin:0 auto; min-height:285px; }
-      .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
-      .guide { grid-template-columns:1fr; }
-    }
-    @media (max-width:600px) {
-      .container { width:calc(100% - 28px); }
-      .top-inner { min-height:65px; }
-      .top-nav { gap:13px; }
-      .top-nav a:not(.nav-label) { display:none; }
-      h1 { font-size:39px; }
-      .hero-desc { font-size:14px; }
-      .overview { gap:7px; margin-bottom:64px; }
-      .stat { padding:15px 12px; }
-      .stat strong { font-size:21px; }
-      .stat small { font-size:10px; }
-      .section-head { display:block; }
-      .note { display:inline-block; margin-top:14px; }
-      .cards { grid-template-columns:1fr; }
-      .search-box { width:100%; }
-      .guide { margin-top:65px; }
-      .guide-panel,.notice { padding:23px; }
-    }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .card { transition:none; } }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="container top-inner">
-      <a class="brand" href="#top" aria-label="한글패치 보관소 홈">
-        <span class="brand-icon">K</span><span>한글패치 보관소<small>K-PATCH ARCHIVE</small></span>
-      </a>
-      <nav class="top-nav" aria-label="주 메뉴">
-        <a href="#patches">패치 목록</a>
-        <a href="#guide">이용 안내</a>
-        <a class="nav-label" href="#patches">자료실 열기 ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="container">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div>
-        <div class="eyebrow">RETRO GAME TRANSLATION ARCHIVE</div>
-        <h1 id="hero-heading">추억의 게임을<br><span class="gradient-text">우리말로 다시.</span></h1>
-        <p class="hero-desc">레트로 게임을 더 편하게 즐기기 위한 개인 한글패치 자료실입니다. 원하는 게임을 기종별로 찾고, 설명과 지원 버전을 확인한 뒤 패치를 내려받으세요.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#patches">한글패치 찾아보기 <span aria-hidden="true">→</span></a>
-          <a class="btn btn-subtle" href="#guide">처음 이용하시나요?</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <i class="pixel-spark spark1"></i><i class="pixel-spark spark2"></i>
-        <div class="console">
-          <div class="screen-frame"><div class="screen">K-PATCH<span>READY TO PLAY</span></div></div>
-          <div class="controls"><div class="dpad-h"></div><div class="dpad-v"></div><div class="ab"><span></span><span></span></div></div>
-        </div>
-        <div class="float-note">✓ 한국어 패치 아카이브</div>
-      </div>
-    </section>
-
-    <div class="overview" aria-label="자료실 현황">
-      <div class="stat"><strong id="total-count">0</strong><small>등록된 게임</small></div>
-      <div class="stat"><strong id="live-count">0</strong><small>다운로드 연결 완료</small></div>
-      <div class="stat"><strong id="platform-count">0</strong><small>지원 기종</small></div>
-    </div>
-
-    <section id="patches" aria-labelledby="patches-heading">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">PATCH LIBRARY</div>
-          <h2 id="patches-heading" class="section-title">한글패치 목록</h2>
-          <p class="section-desc">게임 이름을 검색하거나 기종을 선택해 원하는 패치를 찾아보세요.</p>
-        </div>
-        <span class="note">지원 판본·원본 해시는 릴리스에서 확인하세요.</span>
-      </div>
-      <div class="search-tools">
-        <div id="filters" class="filters" role="group" aria-label="기종별 분류"></div>
-        <label class="search-box">
-          <svg aria-hidden="true" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input id="search" type="search" placeholder="게임 이름 검색" aria-label="게임 이름 검색">
-        </label>
-      </div>
-      <div id="result-count" class="results" aria-live="polite" aria-atomic="true"></div>
-      <div id="cards" class="cards"></div>
-      <noscript><p class="section-desc">게임 목록을 보려면 JavaScript를 켜 주세요. <a href="https://github.com/hmm1211/github.io/releases">GitHub에서 전체 한글패치 보기 ↗</a></p></noscript>
-    </section>
-
-    <section class="guide" id="guide" aria-label="이용 방법 및 주의사항">
-      <div class="guide-panel">
-        <div class="eyebrow">HOW TO USE</div>
-        <h2>한글패치 이용 방법</h2>
-        <ol class="steps">
-          <li><span class="step-num">1</span><span>게임 목록에서 원하는 작품을 선택하고 <b>패치 받기</b>를 누릅니다.</span></li>
-          <li><span class="step-num">2</span><span>릴리스 페이지의 <b>Assets</b>에서 해당 게임의 <b>한글패치 ZIP</b>을 내려받습니다.</span></li>
-          <li><span class="step-num">3</span><span>동봉된 설명서에서 <b>지원 버전과 적용 방법</b>을 반드시 확인합니다.</span></li>
-        </ol>
-      </div>
-      <div class="notice">
-        <div class="eyebrow">PLEASE READ</div>
-        <h2>다운로드 전 확인</h2>
-        <p>이곳은 개인 제작 한글패치를 소개하는 사이트입니다. 원본 게임 파일은 제공하지 않습니다. 게임별로 지원 판본 및 패치 방식이 다를 수 있으므로, 적용하기 전에 해당 패치의 안내문을 읽어 주세요.</p>
-        <p>패치 및 관련 게임 저작물의 권리를 존중해 주세요. 오류나 문의에 대한 안내는 각 게임의 릴리스 설명을 참고하세요.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer><div class="container footer-inner"><span>© <span id="year"></span> K-PATCH ARCHIVE · 개인 한글패치 자료실</span><span>Powered by GitHub Pages</span></div></footer>
-
-  <script>
-    // 실제 게시된 GitHub 릴리스와 검증한 배포본을 바탕으로 구성합니다.
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="레트로·PC 게임용 한국어 패치를 찾아보고, GitHub 릴리스에서 다운로드할 수 있는 개인 한글패치 아카이브입니다.">
+  <meta name="theme-color" content="#0b1020">
+  <title>한글패치 보관소 | K-PATCH ARCHIVE</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0f1d; --panel: #131c2e; --panel2: #19253a; --line: #29354a;
+      --ink: #f2f6ff; --muted: #a3b2ca; --cyan: #65dfec; --blue: #7ca9ff;
+      --accent: #9c8bff; --radius: 18px;
+      font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--bg); min-height: 100vh; }
+    body::before { content:""; position:absolute; inset:0 0 auto; height:580px; pointer-events:none; z-index:-1;
+      background: radial-gradient(ellipse 52% 80% at 79% 30%, #263b6c55 0, transparent 80%),
+      radial-gradient(ellipse 33% 65% at 23% 10%, #4c2c7355 0, transparent 80%);
+    }
+    a { color:inherit; text-decoration:none; }
+    button,input { font:inherit; }
+    button { cursor:pointer; }
+    .container { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+    .topbar { background:#0b1121dd; border-bottom:1px solid #28324888; }
+    .top-inner { display:flex; gap:20px; align-items:center; justify-content:space-between; min-height:74px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:850; font-size:16px; letter-spacing:.02em; }
+    .brand-icon { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; color:#081221;
+      background:linear-gradient(135deg, var(--cyan), var(--blue)); font-weight:900; font-size:17px; }
+    .brand small { display:block; font-size:10px; letter-spacing:.15em; color:var(--muted); font-weight:700; margin-top:2px; }
+    .top-nav { display:flex; gap:26px; align-items:center; color:#b8c5db; font-size:13px; font-weight:650; }
+    .top-nav a:hover, .top-nav a:focus-visible { color:var(--cyan); }
+    .nav-label { color:#09202a; background:var(--cyan); padding:10px 14px; border-radius:11px; font-weight:800; }
+    .nav-label:hover { background:#a3f4fc; }
+    .hero { display:grid; grid-template-columns:minmax(0, 1.22fr) minmax(310px, .78fr); gap:44px; align-items:center;
+      padding:77px 0 63px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:#b4edfc; font-size:11px; font-weight:850;
+      letter-spacing:.13em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:18px; height:2px; background:var(--cyan); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(38px, 5.5vw, 68px); letter-spacing:-.075em; line-height:1.16; margin:17px 0 21px; font-weight:900; }
+    .gradient-text { background:linear-gradient(90deg, #72e0f1, #a7acff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-desc { color:#b8c5d9; max-width:575px; font-size:16px; line-height:1.95; word-break:keep-all; }
+    .hero-actions { display:flex; gap:11px; flex-wrap:wrap; margin-top:26px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:11px; min-height:44px; padding:0 17px;
+      font-weight:800; font-size:13px; border:1px solid transparent; }
+    .btn-primary { background:linear-gradient(110deg, #6be2ee, #98acff); color:#071321; }
+    .btn-primary:hover { filter:brightness(1.1); }
+    .btn-subtle { border-color:#38475f; background:#1c283b; color:#e4eafd; }
+    .btn-subtle:hover { border-color:#8292b3; }
+    .hero-art { min-height:310px; padding:28px; display:flex; justify-content:center; align-items:center; position:relative; overflow:hidden;
+      background:linear-gradient(155deg, #223251dd, #101b2d 61%); border:1px solid #3b5076; border-radius:26px;
+      box-shadow:0 28px 80px #02061066; }
+    .hero-art::before { content:""; position:absolute; width:270px; height:270px; border:1px solid #7088bf44; border-radius:50%; transform:scale(1.3); }
+    .hero-art::after { content:""; position:absolute; width:270px; height:270px; border:1px dashed #7088bf44; border-radius:50%; transform:scale(.81); }
+    .pixel-spark { position:absolute; width:9px; height:9px; background:var(--cyan); box-shadow:0 0 24px #5de6f2; transform:rotate(30deg); }
+    .spark1 { top:27px; right:78px; } .spark2 { bottom:49px; left:42px; width:5px; height:5px; }
+    .console { z-index:1; position:relative; background:#ecf3ff; width:228px; height:242px; border-radius:24px 24px 42px 24px; padding:20px 21px;
+      transform:rotate(-9deg); box-shadow:15px 22px 35px #050a16aa, inset -10px -9px #b8c5dc; }
+    .screen-frame { background:#20314f; border:7px solid #8799b6; border-radius:13px 13px 26px 13px; height:135px; padding:10px; }
+    .screen { height:100%; background:linear-gradient(130deg, #1e335a, #304e69); display:flex; flex-direction:column; align-items:center;
+      justify-content:center; border-radius:3px; color:#a0ecf6; font:900 23px/1.3 ui-monospace, SFMono-Regular, Consolas, monospace; text-shadow:0 0 12px #79e5ff88; }
+    .screen span { font-size:11px; color:#c6faff; letter-spacing:.25em; }
+    .controls { position:relative; margin:24px 7px; height:42px; }
+    .dpad-h { position:absolute; left:0; top:13px; width:48px; height:16px; border-radius:4px; background:#364561; }
+    .dpad-v { position:absolute; left:16px; top:-3px; width:16px; height:48px; border-radius:4px; background:#364561; }
+    .ab { position:absolute; right:0; top:2px; display:flex; gap:10px; transform:rotate(-20deg); }
+    .ab span { display:block; width:24px; height:24px; border-radius:50%; background:#a18cea; box-shadow:inset -3px -3px #7559c0; }
+    .float-note { z-index:2; position:absolute; right:19px; bottom:25px; padding:10px 13px; border:1px solid #4b6589;
+      background:#112036eb; color:#d9faff; border-radius:10px; font-weight:800; font-size:12px; box-shadow:0 10px 30px #0004; }
+    .overview { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:84px; }
+    .stat { padding:20px 22px; border:1px solid var(--line); border-radius:15px; background:#121b2ac9; }
+    .stat strong { display:block; font-size:26px; letter-spacing:-.04em; }
+    .stat small { color:var(--muted); font-weight:650; font-size:12px; display:block; margin-top:7px; }
+    section { scroll-margin-top:28px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:22px; }
+    .section-title { font-size:28px; letter-spacing:-.055em; margin:7px 0 6px; font-weight:900; }
+    .section-desc { color:var(--muted); margin:0; font-size:13px; line-height:1.7; }
+    .note { font-size:11px; color:#c6bca2; background:#31291a; border:1px solid #6b522c; padding:8px 12px; border-radius:10px; }
+    .search-tools { display:flex; gap:12px; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; }
+    .filters { display:flex; flex-wrap:wrap; gap:7px; }
+    .filter { border:1px solid #334156; color:#b6c7dd; background:#182336; padding:9px 15px; border-radius:10px; font-weight:750; font-size:12px; }
+    .filter[aria-pressed="true"] { background:var(--cyan); color:#0a2027; border-color:var(--cyan); }
+    .search-box { display:flex; gap:9px; align-items:center; padding:0 14px; border:1px solid #3b4b64; background:#172235;
+      border-radius:11px; min-height:40px; width:265px; max-width:100%; }
+    .search-box:focus-within { border-color:#80e6f3; box-shadow:0 0 0 3px #80e6f323; }
+    .search-box svg { color:#9caec6; flex-shrink:0; }
+    .search-box input { width:100%; background:transparent; border:0; outline:0; color:#f2f6ff; font-size:13px; }
+    .search-box input::placeholder { color:#8799b4; }
+    .results { color:var(--muted); font-size:12px; margin-bottom:13px; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .card { background:#141e2f; border:1px solid #2d3a50; border-radius:17px; overflow:hidden; transition:transform .18s,border-color .18s; }
+    .card:hover { transform:translateY(-4px); border-color:#688bb8; }
+    .cover { aspect-ratio:16/9; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; padding:20px;
+      background:radial-gradient(circle at 72% 25%, color-mix(in srgb, var(--covercolor) 65%, transparent), transparent 65%), linear-gradient(135deg,#202f4c,#101a29); }
+    .cover:before { content:""; position:absolute; width:210px; height:210px; border:2px solid #ffffff1b; border-radius:40px;
+      right:-36px; top:-67px; transform:rotate(30deg); }
+    .cover:after { content:""; position:absolute; width:110px; height:110px; border:2px solid #ffffff20; right:30px; top:18px; transform:rotate(30deg); }
+    .cover-preview { padding:0; background:#0a101d; }
+    .cover-preview:before,.cover-preview:after { display:none; }
+    .cover-preview img { width:100%; height:100%; object-fit:contain; }
+    .patch-direct { display:inline-block; margin:12px 0 0; color:#b5d4ff; font-size:12px; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
+    .card[id] { scroll-margin-top:20px; }
+    .cover-mark { z-index:1; font-size:clamp(32px, 4vw, 50px); font-weight:900; letter-spacing:-.09em; color:#f0f8ff; opacity:.76; line-height:1; }
+    .cover-small { z-index:1; margin-top:8px; font-size:10px; color:#dce9ff; font-weight:850; letter-spacing:.18em; }
+    .cover-platform { position:absolute; z-index:2; left:17px; top:16px; background:#081222bb; border:1px solid #ffffff44; color:#eaf6ff;
+      padding:5px 9px; border-radius:7px; font-size:10px; font-weight:850; }
+    .card-body { padding:19px; }
+    .tags { display:flex; gap:7px; margin-bottom:10px; }
+    .tag { color:#bbcbdf; background:#223047; border-radius:6px; padding:5px 8px; font-size:10px; font-weight:780; }
+    .tag-demo { color:#f5d9aa; background:#443423; }
+    .tag-live { color:#baf1e9; background:#16413f; }
+    .card h3 { font-size:18px; margin:0 0 8px; letter-spacing:-.04em; }
+    .card-desc { font-size:12px; line-height:1.8; min-height:42px; color:#a7b8d0; margin:0 0 16px; }
+    .older { margin-top:10px; font-size:11px; color:#96a9c2; display:flex; flex-wrap:wrap; gap:6px 10px; }
+    .older a { color:#9fc3ff; text-decoration:none; } .older a:hover { text-decoration:underline; }
+    .card-meta { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; color:#96a9c2; font-size:11px; border-top:1px solid #2e3c53; padding-top:14px; margin-bottom:15px; }
+    .download { min-height:40px; display:flex; align-items:center; justify-content:center; background:#25364d; color:#dbe8fa;
+      border-radius:9px; font-size:12px; font-weight:850; border:1px solid #344966; }
+    .download.active { background:#62d6e5; color:#071a23; border-color:#62d6e5; }
+    .download.active:hover { background:#9af3fa; }
+    .empty { grid-column:1/-1; text-align:center; background:#172235; border:1px dashed #40506b; padding:55px 20px; color:#b6c9df; border-radius:14px; }
+    .guide { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:82px 0 85px; }
+    .guide-panel { border:1px solid #344259; border-radius:17px; padding:30px; background:#172134; }
+    .guide-panel h2 { font-size:22px; letter-spacing:-.05em; margin-bottom:18px; }
+    .steps { list-style:none; padding:0; margin:0; display:grid; gap:17px; }
+    .steps li { display:flex; align-items:flex-start; gap:13px; color:#b3c4db; font-size:13px; line-height:1.7; }
+    .step-num { display:grid; place-items:center; flex-shrink:0; height:27px; width:27px; border-radius:9px; background:#24465c; color:#9be9f2; font-weight:900; }
+    .notice { background:linear-gradient(135deg,#1a2b43,#22243d); border:1px solid #485473; border-radius:17px; padding:30px; }
+    .notice h2 { margin-bottom:18px; font-size:22px; letter-spacing:-.05em; }
+    .notice p { font-size:13px; color:#b6c5de; line-height:1.95; }
+    footer { border-top:1px solid #2d3a52; padding:27px 0 35px; background:#0a0f1b; color:#94a5be; font-size:12px; }
+    .footer-inner { display:flex; gap:15px; justify-content:space-between; flex-wrap:wrap; }
+    @media (max-width:860px) {
+      .hero { grid-template-columns:1fr; gap:24px; padding-top:50px; }
+      .hero-art { max-width:550px; width:100%; margin:0 auto; min-height:285px; }
+      .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .guide { grid-template-columns:1fr; }
+    }
+    @media (max-width:600px) {
+      .container { width:calc(100% - 28px); }
+      .top-inner { min-height:65px; }
+      .top-nav { gap:13px; }
+      .top-nav a:not(.nav-label) { display:none; }
+      h1 { font-size:39px; }
+      .hero-desc { font-size:14px; }
+      .overview { gap:7px; margin-bottom:64px; }
+      .stat { padding:15px 12px; }
+      .stat strong { font-size:21px; }
+      .stat small { font-size:10px; }
+      .section-head { display:block; }
+      .note { display:inline-block; margin-top:14px; }
+      .cards { grid-template-columns:1fr; }
+      .search-box { width:100%; }
+      .guide { margin-top:65px; }
+      .guide-panel,.notice { padding:23px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .card { transition:none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container top-inner">
+      <a class="brand" href="#top" aria-label="한글패치 보관소 홈">
+        <span class="brand-icon">K</span><span>한글패치 보관소<small>K-PATCH ARCHIVE</small></span>
+      </a>
+      <nav class="top-nav" aria-label="주 메뉴">
+        <a href="#patches">패치 목록</a>
+        <a href="#guide">이용 안내</a>
+        <a class="nav-label" href="#patches">자료실 열기 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <div class="eyebrow">RETRO GAME TRANSLATION ARCHIVE</div>
+        <h1 id="hero-heading">추억의 게임을<br><span class="gradient-text">우리말로 다시.</span></h1>
+        <p class="hero-desc">레트로 게임을 더 편하게 즐기기 위한 개인 한글패치 자료실입니다. 원하는 게임을 기종별로 찾고, 설명과 지원 버전을 확인한 뒤 패치를 내려받으세요.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#patches">한글패치 찾아보기 <span aria-hidden="true">→</span></a>
+          <a class="btn btn-subtle" href="#guide">처음 이용하시나요?</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <i class="pixel-spark spark1"></i><i class="pixel-spark spark2"></i>
+        <div class="console">
+          <div class="screen-frame"><div class="screen">K-PATCH<span>READY TO PLAY</span></div></div>
+          <div class="controls"><div class="dpad-h"></div><div class="dpad-v"></div><div class="ab"><span></span><span></span></div></div>
+        </div>
+        <div class="float-note">✓ 한국어 패치 아카이브</div>
+      </div>
+    </section>
+
+    <div class="overview" aria-label="자료실 현황">
+      <div class="stat"><strong id="total-count">0</strong><small>등록된 게임</small></div>
+      <div class="stat"><strong id="live-count">0</strong><small>다운로드 연결 완료</small></div>
+      <div class="stat"><strong id="platform-count">0</strong><small>지원 기종</small></div>
+    </div>
+
+    <section id="patches" aria-labelledby="patches-heading">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">PATCH LIBRARY</div>
+          <h2 id="patches-heading" class="section-title">한글패치 목록</h2>
+          <p class="section-desc">게임 이름을 검색하거나 기종을 선택해 원하는 패치를 찾아보세요.</p>
+        </div>
+        <span class="note">지원 판본·원본 해시는 릴리스에서 확인하세요.</span>
+      </div>
+      <div class="search-tools">
+        <div id="filters" class="filters" role="group" aria-label="기종별 분류"></div>
+        <label class="search-box">
+          <svg aria-hidden="true" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="search" type="search" placeholder="게임 이름 검색" aria-label="게임 이름 검색">
+        </label>
+      </div>
+      <div id="result-count" class="results" aria-live="polite" aria-atomic="true"></div>
+      <div id="cards" class="cards"></div>
+      <noscript><p class="section-desc">게임 목록을 보려면 JavaScript를 켜 주세요. <a href="https://github.com/hmm1211/github.io/releases">GitHub에서 전체 한글패치 보기 ↗</a></p></noscript>
+    </section>
+
+    <section class="guide" id="guide" aria-label="이용 방법 및 주의사항">
+      <div class="guide-panel">
+        <div class="eyebrow">HOW TO USE</div>
+        <h2>한글패치 이용 방법</h2>
+        <ol class="steps">
+          <li><span class="step-num">1</span><span>게임 목록에서 원하는 작품을 선택하고 <b>패치 받기</b>를 누릅니다.</span></li>
+          <li><span class="step-num">2</span><span>릴리스 페이지의 <b>Assets</b>에서 해당 게임의 <b>한글패치 ZIP</b>을 내려받습니다.</span></li>
+          <li><span class="step-num">3</span><span>동봉된 설명서에서 <b>지원 버전과 적용 방법</b>을 반드시 확인합니다.</span></li>
+        </ol>
+      </div>
+      <div class="notice">
+        <div class="eyebrow">PLEASE READ</div>
+        <h2>다운로드 전 확인</h2>
+        <p>이곳은 개인 제작 한글패치를 소개하는 사이트입니다. 원본 게임 파일은 제공하지 않습니다. 게임별로 지원 판본 및 패치 방식이 다를 수 있으므로, 적용하기 전에 해당 패치의 안내문을 읽어 주세요.</p>
+        <p>패치 및 관련 게임 저작물의 권리를 존중해 주세요. 오류나 문의에 대한 안내는 각 게임의 릴리스 설명을 참고하세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> K-PATCH ARCHIVE · 개인 한글패치 자료실</span><span>Powered by GitHub Pages</span></div></footer>
+
+  <script>
+    // 실제 게시된 GitHub 릴리스와 검증한 배포본을 바탕으로 구성합니다.
     const patches = [
   {
     "id": "black-matrix-ii",
@@ -714,124 +714,137 @@
     "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/tondemo-crisis-kr-v0.9",
     "color": "#556df0",
     "coverText": "CRISIS!"
+  },
+  {
+    "id": "tanto-trilogy",
+    "title": "탄트알 · 이치단트알 · 산도알 통합판",
+    "originalTitle": "Puzzle & Action Trilogy / 2do Aru Koto wa Sando R",
+    "platform": "새턴",
+    "version": "v0.7",
+    "updated": "2026-11-26",
+    "description": "3편을 한 디스크에서 선택하는 한국어 통합판. 일본판 산도알(3편)의 Track 1·2만 준비하면 되며, 1·2편 롬은 필요하지 않습니다. 전체 완주 검수는 진행 전입니다.",
+    "releaseUrl": "https://github.com/hmm1211/github.io/releases/tag/2do-aru-koto-wa-sando-r-trilogy-kr-v0.7",
+    "downloadUrl": "https://github.com/hmm1211/github.io/releases/download/2do-aru-koto-wa-sando-r-trilogy-kr-v0.7/2do.Aru.Koto.wa.Sando.R-kr-v0.7.zip",
+    "introUrl": "tanto-trilogy.html",
+    "coverUrl": "images/tanto-trilogy/01-selection.png"
   }
-];
-
-    let selectedPlatform = "전체";
-    let query = "";
-    const filtersEl = document.getElementById("filters");
-    const cardsEl = document.getElementById("cards");
-    const searchEl = document.getElementById("search");
-
-    function make(tag, className, text) {
-      const el = document.createElement(tag);
-      if (className) el.className = className;
-      if (text !== undefined) el.textContent = text;
-      return el;
-    }
-    function hasLink(patch) {
-      return Boolean(patch.introUrl && patch.downloadUrl) || typeof patch.releaseUrl === "string" && /^https:\/\//i.test(patch.releaseUrl);
-    }
-    function renderFilters() {
-      filtersEl.replaceChildren();
-      const platforms = ["전체", ...["PS1", "PS2", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
-      platforms.forEach(platform => {
-        const button = make("button", "filter", platform);
-        button.type = "button";
-        button.setAttribute("aria-pressed", String(selectedPlatform === platform));
-        button.addEventListener("click", () => {
-          selectedPlatform = platform;
-          renderFilters(); renderCards();
-        });
-        filtersEl.appendChild(button);
-      });
-    }
-    function renderCards() {
-      cardsEl.replaceChildren();
-      const filtered = patches.filter(p =>
-        (selectedPlatform === "전체" || p.platform === selectedPlatform) &&
-        (p.title + " " + (p.originalTitle || "") + " " + p.description + " " + p.platform).toLocaleLowerCase("ko-KR").includes(query)
-      );
-      document.getElementById("result-count").textContent = `${filtered.length}개의 게임`;
-      if (filtered.length === 0) {
-        cardsEl.appendChild(make("div", "empty", "해당 조건에 맞는 게임이 없습니다."));
-        return;
-      }
-      filtered.forEach(p => {
-        const card = make("article", "card");
-        const cover = make("div", "cover");
-        if (p.id) card.id = p.id;
-        cover.appendChild(make("span", "cover-platform", p.platform));
-        if (p.coverUrl) {
-          cover.classList.add("cover-preview");
-          const picture = make("img");
-          picture.src = p.coverUrl;
-          picture.alt = p.title + " 타이틀 화면";
-          picture.width = 640;
-          picture.height = 480;
-          picture.loading = "lazy";
-          cover.appendChild(picture);
-        } else {
-          cover.style.setProperty("--covercolor", p.color || "#568be4");
-          cover.appendChild(make("div", "cover-mark", p.coverText || p.title.slice(0, 4)));
-          cover.appendChild(make("div", "cover-small", "KOREAN PATCH ARCHIVE"));
-        }
-        card.appendChild(cover);
-
-        const body = make("div", "card-body");
-        const tags = make("div", "tags");
-        tags.appendChild(make("span", "tag", "한국어 패치"));
-        tags.appendChild(make("span", hasLink(p) ? "tag tag-live" : "tag tag-demo", hasLink(p) ? "다운로드 가능" : "링크 미등록"));
-        body.appendChild(tags);
-        body.appendChild(make("h3", "", p.title));
-        body.appendChild(make("p", "card-desc", p.description));
-        const meta = make("div", "card-meta");
-        meta.appendChild(make("span", "", `버전 ${p.version || "미정"}`));
-        meta.appendChild(make("span", "", p.updated || "날짜 미정"));
-        body.appendChild(meta);
-        if (hasLink(p)) {
-          const link = make("a", "download active", p.introUrl ? "소개 보기" : "패치 받기  ↗");
-          link.href = p.introUrl || p.releaseUrl;
-          if (p.introUrl) {
-            link.setAttribute("aria-label", `${p.title} 소개와 스크린샷 보기`);
-          } else {
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
-            link.setAttribute("aria-label", `${p.title} 패치 받기 (새 탭)`);
-          }
-          body.appendChild(link);
-          // 같은 게임의 이전 배포본 — GitHub 릴리스 목록은 날짜순이라 따로 떨어져 보이므로 카드에 같이 붙인다
-          if (Array.isArray(p.olderReleases) && p.olderReleases.length) {
-            const older = make("div", "older", "이전 버전:");
-            p.olderReleases.forEach(o => {
-              const a = make("a", "", `${o.version}${o.updated ? " (" + o.updated + ")" : ""} ↗`);
-              a.href = o.releaseUrl; a.target = "_blank"; a.rel = "noopener noreferrer";
-              a.setAttribute("aria-label", `${p.title} ${o.version} 받기 (새 탭)`);
-              older.appendChild(a);
-            });
-            body.appendChild(older);
-          }
-        } else {
-          const disabled = make("div", "download", "다운로드 링크 등록 전");
-          body.appendChild(disabled);
-        }
-        if (p.downloadUrl) {
-          const direct = make("a", "patch-direct", "패치받기");
-          direct.href = p.downloadUrl;
-          direct.setAttribute("aria-label", `${p.title} ${p.version} 패치받기 ZIP 다운로드`);
-          body.appendChild(direct);
-        }
-        card.appendChild(body);
-        cardsEl.appendChild(card);
-      });
-    }
-    document.getElementById("total-count").textContent = patches.length;
-    document.getElementById("live-count").textContent = patches.filter(hasLink).length;
-    document.getElementById("platform-count").textContent = new Set(patches.map(p => p.platform)).size;
-    document.getElementById("year").textContent = new Date().getFullYear();
-    searchEl.addEventListener("input", () => { query = searchEl.value.trim().toLocaleLowerCase("ko-KR"); renderCards(); });
-    renderFilters();
-    renderCards();
-  </script>
-</body>
-</html>
+];
+
+    let selectedPlatform = "전체";
+    let query = "";
+    const filtersEl = document.getElementById("filters");
+    const cardsEl = document.getElementById("cards");
+    const searchEl = document.getElementById("search");
+
+    function make(tag, className, text) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (text !== undefined) el.textContent = text;
+      return el;
+    }
+    function hasLink(patch) {
+      return Boolean(patch.introUrl && patch.downloadUrl) || typeof patch.releaseUrl === "string" && /^https:\/\//i.test(patch.releaseUrl);
+    }
+    function renderFilters() {
+      filtersEl.replaceChildren();
+      const platforms = ["전체", ...["PS1", "PS2", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
+      platforms.forEach(platform => {
+        const button = make("button", "filter", platform);
+        button.type = "button";
+        button.setAttribute("aria-pressed", String(selectedPlatform === platform));
+        button.addEventListener("click", () => {
+          selectedPlatform = platform;
+          renderFilters(); renderCards();
+        });
+        filtersEl.appendChild(button);
+      });
+    }
+    function renderCards() {
+      cardsEl.replaceChildren();
+      const filtered = patches.filter(p =>
+        (selectedPlatform === "전체" || p.platform === selectedPlatform) &&
+        (p.title + " " + (p.originalTitle || "") + " " + p.description + " " + p.platform).toLocaleLowerCase("ko-KR").includes(query)
+      );
+      document.getElementById("result-count").textContent = `${filtered.length}개의 게임`;
+      if (filtered.length === 0) {
+        cardsEl.appendChild(make("div", "empty", "해당 조건에 맞는 게임이 없습니다."));
+        return;
+      }
+      filtered.forEach(p => {
+        const card = make("article", "card");
+        const cover = make("div", "cover");
+        if (p.id) card.id = p.id;
+        cover.appendChild(make("span", "cover-platform", p.platform));
+        if (p.coverUrl) {
+          cover.classList.add("cover-preview");
+          const picture = make("img");
+          picture.src = p.coverUrl;
+          picture.alt = p.title + " 타이틀 화면";
+          picture.width = 640;
+          picture.height = 480;
+          picture.loading = "lazy";
+          cover.appendChild(picture);
+        } else {
+          cover.style.setProperty("--covercolor", p.color || "#568be4");
+          cover.appendChild(make("div", "cover-mark", p.coverText || p.title.slice(0, 4)));
+          cover.appendChild(make("div", "cover-small", "KOREAN PATCH ARCHIVE"));
+        }
+        card.appendChild(cover);
+
+        const body = make("div", "card-body");
+        const tags = make("div", "tags");
+        tags.appendChild(make("span", "tag", "한국어 패치"));
+        tags.appendChild(make("span", hasLink(p) ? "tag tag-live" : "tag tag-demo", hasLink(p) ? "다운로드 가능" : "링크 미등록"));
+        body.appendChild(tags);
+        body.appendChild(make("h3", "", p.title));
+        body.appendChild(make("p", "card-desc", p.description));
+        const meta = make("div", "card-meta");
+        meta.appendChild(make("span", "", `버전 ${p.version || "미정"}`));
+        meta.appendChild(make("span", "", p.updated || "날짜 미정"));
+        body.appendChild(meta);
+        if (hasLink(p)) {
+          const link = make("a", "download active", p.introUrl ? "소개 보기" : "패치 받기  ↗");
+          link.href = p.introUrl || p.releaseUrl;
+          if (p.introUrl) {
+            link.setAttribute("aria-label", `${p.title} 소개와 스크린샷 보기`);
+          } else {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.setAttribute("aria-label", `${p.title} 패치 받기 (새 탭)`);
+          }
+          body.appendChild(link);
+          // 같은 게임의 이전 배포본 — GitHub 릴리스 목록은 날짜순이라 따로 떨어져 보이므로 카드에 같이 붙인다
+          if (Array.isArray(p.olderReleases) && p.olderReleases.length) {
+            const older = make("div", "older", "이전 버전:");
+            p.olderReleases.forEach(o => {
+              const a = make("a", "", `${o.version}${o.updated ? " (" + o.updated + ")" : ""} ↗`);
+              a.href = o.releaseUrl; a.target = "_blank"; a.rel = "noopener noreferrer";
+              a.setAttribute("aria-label", `${p.title} ${o.version} 받기 (새 탭)`);
+              older.appendChild(a);
+            });
+            body.appendChild(older);
+          }
+        } else {
+          const disabled = make("div", "download", "다운로드 링크 등록 전");
+          body.appendChild(disabled);
+        }
+        if (p.downloadUrl) {
+          const direct = make("a", "patch-direct", "패치받기");
+          direct.href = p.downloadUrl;
+          direct.setAttribute("aria-label", `${p.title} ${p.version} 패치받기 ZIP 다운로드`);
+          body.appendChild(direct);
+        }
+        card.appendChild(body);
+        cardsEl.appendChild(card);
+      });
+    }
+    document.getElementById("total-count").textContent = patches.length;
+    document.getElementById("live-count").textContent = patches.filter(hasLink).length;
+    document.getElementById("platform-count").textContent = new Set(patches.map(p => p.platform)).size;
+    document.getElementById("year").textContent = new Date().getFullYear();
+    searchEl.addEventListener("input", () => { query = searchEl.value.trim().toLocaleLowerCase("ko-KR"); renderCards(); });
+    renderFilters();
+    renderCards();
+  </script>
+</body>
+</html>
