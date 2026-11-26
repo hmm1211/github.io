@@ -901,7 +901,8 @@
     "coverUrl": "images/global-force-shin-sentou-kokka/01_title.png",
     "coverWidth": 350,
     "coverHeight": 480,
-    "coverAlt": "글로벌 포스 신·전투국가 한국어판 타이틀 화면"
+    "coverAlt": "글로벌 포스 신·전투국가 한국어판 타이틀 화면",
+    "coverAspectRatio": "4 / 3"
   },
   {
     "title": "나와 마왕",
@@ -1505,6 +1506,12 @@
           picture.height = p.coverHeight || 480;
 
 
+          if (p.coverAspectRatio) {
+            picture.style.aspectRatio = p.coverAspectRatio;
+            picture.style.width = "auto";
+            picture.style.objectFit = "fill";
+            picture.style.alignSelf = "center";
+          }
           picture.loading = "lazy";
 
 
