@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="PS1 북미판 피어 이펙트 한글패치 v0.7 소개, 스크린샷과 다운로드.">
+  <title>피어 이펙트 v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(32px,5vw,50px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .subtitle { display:block; font-size:.52em; letter-spacing:-.035em; margin-top:9px; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#fear-effect">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS1 · 액션 호러 · 2000년 2월 18일 발매</p>
+        <h1 id="game-title">피어 이펙트</h1>
+        <p class="original" lang="en">Fear Effect</p>
+        <p class="copy">열여덟 번째 생일을 며칠 앞두고 홍콩 삼합회 거물의 딸 위밍 람이 실종된다. 쾌락을 추구하는 사이비 집단 샨시 보호령이 그녀의 실종에 얽혀 있다는 의혹이 제기된다. 람은 딸을 찾아 살아 돌아오게 하려고 잠입 전문가 하나 추바셸, 훈장을 받은 전직 장교 로이스 글래스, 난폭한 무기 전문가 디크 데쿠르를 고용한다. 세 용병은 람 가문의 비밀을 추적하며 범죄 조직의 소굴과 공포로 가득한 장소를 누빈다.</p>
+        <p class="copy">〈피어 이펙트〉는 액션과 퍼즐을 결합한 3인칭 호러 어드벤처다. 모션 FX 기술을 사용해 배경을 영상처럼 이어 재생한다. 파손된 배관에서 증기가 뿜어져 나오고 조명이 깜박일 때마다 그림자가 바뀌어, 홍콩의 뒷골목과 실내에 영화 같은 긴장감을 더한다.</p>
+        <p class="copy"><a class="release" href="https://gamesdb.launchbox-app.com/games/details/11274-fear-effect">게임 소개 출처 · LaunchBox Games Database</a></p>
+        <h2>한글패치 v0.7</h2>
+        <p class="copy">자막 865개와 타이틀, 메뉴, 일부 아이템·장비 안내를 한글화했습니다. 자막은 기본으로 켜져 있습니다. 시간 안내, 전보 자막, 전기 장치 패널과 단어 힌트표도 반영했습니다.</p>
+        <p class="requirements">PS1 북미판 <strong>Fear Effect (USA)</strong> 원본 BIN 4장에 디스크별 xdelta 패치를 적용하세요. 원본 해시와 적용 방법은 ZIP의 <code>README.txt</code>에 있습니다. 4장 모두 패치 적용 결과를 검증했으며, 전체 완주 검수는 아직 마치지 않았습니다.</p>
+        <div class="actions"><a class="download" href="downloads/Fear_Effect_USA_KR_v0.7.zip" download>패치받기 · v0.7 ZIP</a></div>
+      </div>
+      <figure>
+        <a href="images/fear-effect/01-title.png"><img src="images/fear-effect/01-title.png" width="640" height="480" alt="한글 타이틀 화면"></a>
+        <figcaption>한글 타이틀 화면</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+      <figure>
+        <a href="images/fear-effect/02-main-menu.png"><img src="images/fear-effect/02-main-menu.png" width="640" height="480" loading="lazy" alt="새 게임, 불러오기, 설정이 표시된 메인 메뉴"></a>
+        <figcaption>새 게임, 불러오기, 설정이 표시된 메인 메뉴</figcaption>
+      </figure>
+      <figure>
+        <a href="images/fear-effect/03-settings.png"><img src="images/fear-effect/03-settings.png" width="640" height="480" loading="lazy" alt="자막과 난이도를 조절하는 설정 화면"></a>
+        <figcaption>자막과 난이도를 조절하는 설정 화면</figcaption>
+      </figure>
+      <figure>
+        <a href="images/fear-effect/04-korean-subtitles.png"><img src="images/fear-effect/04-korean-subtitles.png" width="640" height="480" loading="lazy" alt="한글 자막이 표시된 오프닝"></a>
+        <figcaption>한글 자막이 표시된 오프닝</figcaption>
+      </figure>
+      <figure>
+        <a href="images/fear-effect/05-gameplay.png"><img src="images/fear-effect/05-gameplay.png" width="640" height="480" loading="lazy" alt="옥상 착륙장 플레이 화면"></a>
+        <figcaption>옥상 착륙장 플레이 화면</figcaption>
+      </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
