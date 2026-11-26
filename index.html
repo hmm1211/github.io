@@ -1381,7 +1381,7 @@
       filtersEl.replaceChildren();
 
 
-      const platforms = ["전체", ...["PS1", "PS2", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
+      const platforms = ["전체", "최신순", ...["PS1", "PS2", "NDS", "PSP", "드림캐스트", "새턴", "슈퍼패미컴", "패미컴", "메가드라이브", "PC"].filter(platform => patches.some(p => p.platform === platform))];
 
 
       platforms.forEach(platform => {
@@ -1426,7 +1426,7 @@
       const filtered = patches.filter(p =>
 
 
-        (selectedPlatform === "전체" || p.platform === selectedPlatform) &&
+        (selectedPlatform === "전체" || selectedPlatform === "최신순" || p.platform === selectedPlatform) &&
 
 
         (p.title + " " + (p.originalTitle || "") + " " + p.description + " " + p.platform).toLocaleLowerCase("ko-KR").includes(query)
@@ -1435,6 +1435,9 @@
       );
 
 
+      if (selectedPlatform === "최신순") {
+        filtered.sort((a, b) => (b.updated || "").localeCompare(a.updated || ""));
+      }
       document.getElementById("result-count").textContent = `${filtered.length}개의 게임`;
 
 
