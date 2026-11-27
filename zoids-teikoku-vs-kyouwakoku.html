@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="조이드 제국 VS 공화국 PS1 일본판 한글패치 v0.7 소개, 스크린샷과 다운로드.">
+  <title>조이드 제국 VS 공화국 - 메카 생체의 유전자 v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:350/240; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#patches">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS1 일본판 · 2000년 · 한글패치 v0.7</p>
+        <h1 id="game-title">조이드 제국 VS 공화국 - 메카 생체의 유전자</h1>
+        <p class="original" lang="en">Zoids - Teikoku vs Kyouwakoku - Meka Seitai no Idenshi</p>
+        <h2>게임 소개</h2>
+        <p class="copy">TOMY가 2000년에 일본에서 발매한 PlayStation용 턴제 전략 RPG입니다. 금속 생명체인 &#x27;조이드&#x27;가 사는 행성 Zi를 무대로, 헬릭 공화국과 제네바스 제국 가운데 한쪽을 골라 부대를 지휘합니다.</p>
+        <p class="copy">임무를 완수하면 새 조이드가 해금되고, 구매한 기체를 부대에 편입할 수 있습니다. 지도에서 적과 맞붙으면 3D 턴제 교전으로 전환됩니다. 기체의 EP가 바닥나면 공격할 수 없어서, 교전 전에 남은 에너지를 살펴야 합니다.</p>
+        <h2>한글패치 v0.7</h2>
+        <p class="copy">대사와 메뉴, 정지 이미지 85개, 스토리 영상 10편의 자막과 스태프 크레딧 직책을 한글화했습니다.</p>
+        <p class="requirements">일본판 <strong>SLPS-02982</strong>용입니다. 원본 BIN 해시와 패치 적용 방법은 ZIP의 <code>readme.txt</code>에서 확인할 수 있습니다.</p>
+        <div class="actions">
+          <a class="download" href="downloads/Zoids-kr-v0.7.zip">패치 ZIP 받기</a>
+          <a class="release" href="https://github.com/hmm1211/github.io/blob/main/downloads/Zoids-kr-v0.7.zip">GitHub에서 보기</a>
+        </div>
+      </div>
+      <figure>
+        <a href="images/zoids-teikoku-vs-kyouwakoku/01-briefing.png"><img src="images/zoids-teikoku-vs-kyouwakoku/01-briefing.png" width="350" height="240" alt="마운트 조를 가리키는 작전 지도와 한글 대사"></a>
+        <figcaption>작전 브리핑</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+      <figure>
+        <a href="images/zoids-teikoku-vs-kyouwakoku/02-deployment.png"><img src="images/zoids-teikoku-vs-kyouwakoku/02-deployment.png" width="350" height="240" loading="lazy" alt="작전 지도에서 출격 부대를 선택하는 화면"></a>
+        <figcaption>출격 배치</figcaption>
+      </figure>
+      <figure>
+        <a href="images/zoids-teikoku-vs-kyouwakoku/03-mission.png"><img src="images/zoids-teikoku-vs-kyouwakoku/03-mission.png" width="350" height="240" loading="lazy" alt="전투의 서막 기습 공격 임무와 적 섬멸 조건"></a>
+        <figcaption>첫 임무 시작</figcaption>
+      </figure>
+      <figure>
+        <a href="images/zoids-teikoku-vs-kyouwakoku/04-battle-command.png"><img src="images/zoids-teikoku-vs-kyouwakoku/04-battle-command.png" width="350" height="240" loading="lazy" alt="전술 지도 위에 이동과 공격 방식 등 명령이 표시된 화면"></a>
+        <figcaption>전투 명령</figcaption>
+      </figure>
+      <figure>
+        <a href="images/zoids-teikoku-vs-kyouwakoku/05-unit-status.png"><img src="images/zoids-teikoku-vs-kyouwakoku/05-unit-status.png" width="350" height="240" loading="lazy" alt="고도스의 3D 모델과 한글 능력치 화면"></a>
+        <figcaption>기체 상태</figcaption>
+      </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
