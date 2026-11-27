@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="루나틱 던 오디세이 PS1 일본판 한글패치 v0.7 다운로드와 게임 소개, 스크린샷.">
+  <title>루나틱 던 오디세이 한글패치 v0.7 | 한글패치 보관소</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#f2f6ff; --muted:#a7b8d0; --line:#344259; --cyan:#62d6e5;
+      font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#0a0f1d; color:var(--ink); }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { background:#0b1121; border-bottom:1px solid var(--line); }
+    .topbar .container { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { font-weight:850; text-decoration:none; }
+    .back,.release { color:#b5d4ff; text-underline-offset:4px; }
+    .overview {
+      display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:34px;
+      align-items:center; padding:46px 0 34px;
+    }
+    .metadata { color:var(--cyan); font-size:13px; font-weight:750; margin:0 0 12px; }
+    h1 { font-size:clamp(35px,6vw,58px); line-height:1.12; letter-spacing:-.054em; margin:0; }
+    .original { font-size:19px; color:#bdcbe0; margin:8px 0 22px; }
+    .copy,.requirements { color:var(--muted); line-height:1.78; margin:0 0 14px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 17px; margin-top:22px; }
+    .download { border-radius:9px; padding:13px 16px; background:var(--cyan); color:#071a23; text-decoration:none; font-weight:850; }
+    .download:hover { background:#9af3fa; }
+    figure { margin:0; min-width:0; overflow:hidden; background:#141e2f; border:1px solid var(--line); border-radius:13px; }
+    figure a { display:block; }
+    figure a:focus-visible { outline-offset:-5px; }
+    figure img { display:block; width:100%; height:auto; aspect-ratio:350/240; object-fit:contain; background:#0b1121; }
+    figcaption { color:#d3def0; font-size:14px; padding:11px 14px; }
+    .screens { margin:0 0 60px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 15px; }
+    .screens-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    @media (max-width:750px) {
+      .overview { grid-template-columns:1fr; padding-top:32px; gap:24px; }
+    }
+    @media (max-width:520px) {
+      .container { width:calc(100% - 28px); }
+      .screens-grid { grid-template-columns:1fr; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">한글패치 보관소</a>
+      <a class="back" href="./#patches">목록으로 돌아가기</a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="overview" aria-labelledby="game-title">
+      <div>
+        <p class="metadata">PS1 일본판 · 1999년 · 한글패치 v0.7</p>
+        <h1 id="game-title">루나틱 던 오디세이</h1>
+        <p class="original" lang="en">Lunatic Dawn - Odyssey</p>
+        <h2>게임 소개</h2>
+        <p class="copy">동료들과 함께 여러 마을을 여행하는 아트딩크의 롤플레잉 게임입니다. 1인칭 시점으로 세상을 둘러보며 주민들과 이야기를 나누고, 상점에서 장비를 갖춰 다음 모험을 준비합니다. 적을 만나면 시점이 바뀌어 일행의 모습을 보며 턴제로 싸웁니다.</p>
+        <p class="copy">모험가로 살아가다 결혼해 아이를 낳을 수도 있습니다. 새로 시작할 때마다 마주치는 상황이 달라지고, 모험은 여러 결말로 이어집니다.</p>
+        <h2>한글패치 v0.7</h2>
+        <p class="copy">타이틀 로고와 대사, 의뢰, 메뉴, 노래 가사, 아이템·몬스터 도감, 게임 오버와 엔딩 자막을 한글화했습니다. 기본 이름은 베리오스이며, 한글 자모를 조합해 새 이름을 지을 수 있습니다.</p>
+        <p class="requirements">일본판 원본 Track 1에 패치를 적용하세요. 준비할 파일과 SHA-256 해시, 설치 방법은 ZIP의 <code>readme.txt</code>에 있습니다.</p>
+        <div class="actions">
+          <a class="download" href="downloads/lunatic-dawn-odyssey-kr-v0.7.zip">패치 ZIP 받기</a>
+          <a class="release" href="https://github.com/hmm1211/github.io/blob/main/downloads/lunatic-dawn-odyssey-kr-v0.7.zip">GitHub에서 보기</a>
+        </div>
+      </div>
+      <figure>
+        <a href="images/lunatic-dawn-odyssey/01-title.png"><img src="images/lunatic-dawn-odyssey/01-title.png" width="350" height="240" alt="루나틱 던 오디세이 한글 로고와 시작 안내문"></a>
+        <figcaption>한글 타이틀 화면</figcaption>
+      </figure>
+    </section>
+    <section class="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">게임 스크린샷</h2>
+      <div class="screens-grid">
+      <figure>
+        <a href="images/lunatic-dawn-odyssey/02-character.png"><img src="images/lunatic-dawn-odyssey/02-character.png" width="350" height="240" loading="lazy" alt="주인공의 성별을 선택하는 화면"></a>
+        <figcaption>주인공의 성별 선택</figcaption>
+      </figure>
+      <figure>
+        <a href="images/lunatic-dawn-odyssey/03-name.png"><img src="images/lunatic-dawn-odyssey/03-name.png" width="350" height="240" loading="lazy" alt="기본 이름 베리오스와 한글 자모 자판"></a>
+        <figcaption>한글 이름 입력</figcaption>
+      </figure>
+      <figure>
+        <a href="images/lunatic-dawn-odyssey/04-prologue.png"><img src="images/lunatic-dawn-odyssey/04-prologue.png" width="350" height="240" loading="lazy" alt="삽화 위에 펼쳐지는 한글 프롤로그"></a>
+        <figcaption>프롤로그</figcaption>
+      </figure>
+      <figure>
+        <a href="images/lunatic-dawn-odyssey/05-dialogue.png"><img src="images/lunatic-dawn-odyssey/05-dialogue.png" width="350" height="240" loading="lazy" alt="벽난로 앞에서 조제프가 주인공에게 건네는 작별 인사"></a>
+        <figcaption>조제프와의 대화</figcaption>
+      </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
